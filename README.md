@@ -349,58 +349,7 @@ Relevant = rating $\geq 4$ stars.
 
 ## 9. Visual Results 🎨
 
-### 9.1 Training Convergence Curve
-
-Shows RMSE dropping from 1.50 → 0.56 over 100 epochs. Best val RMSE = 0.9461 at epoch 71. Overfit region visible after epoch 71.
-
-![Training Curve](assets/plot1_training_curve.png)
-
----
-
-### 9.2 RMSE vs Latent Factor k — Paper Figure 2 Replica
-
-Direct replication of Paper Figure 2. Blue FM line stays **below** red Linear baseline at ALL k values. Paper target (~0.92) shown as reference — gap is entirely due to 100x less data.
-
-![RMSE vs k](assets/plot2_rmse_vs_k.png)
-
-| Paper Figure 2 | Our Replication |
-|:--------------:|:---------------:|
-| FM drops below SVM as k increases | FM stays below Linear at all k |
-| SVM stays flat regardless of k | Linear stays flat at 0.9489 |
-| Best RMSE ~0.90 at k=100 (100M data) | Best RMSE 0.9368 at k=50 (~1M data) |
-
----
-
-### 9.3 All Models Comparison
-
-FM PyTorch (blue bar, 0.9393) clearly beats all 4 baselines. Red-to-green color gradient = bad to good. Paper FM (teal) shown as ultimate reference target.
-
-![Model Comparison](assets/plot3_model_comparison.png)
-
----
-
-### 9.4 Actual vs Predicted Rating Distribution
-
-FM predictions (orange) follow the actual rating distribution (blue). Both peak at 3–4 stars. FM is slightly conservative — typical behavior for regularized MF models.
-
-![Rating Distribution](assets/plot4_distribution.png)
-
----
-
-### 9.5 Recommendation Quality — Ranking Metrics @ Top-10
-
-NDCG=0.90 confirms excellent ranking quality. Recall=0.998 means almost all relevant items are found in top-10. Precision=0.24 is realistic for sparse data (2–3 relevant in top-10).
-
-![Ranking Metrics](assets/plot5_ranking.png)
-
----
-
-### 9.6 Prediction Error Distribution — Bias Analysis
-
-Symmetric bell curve with Mean≈0.003 confirms **no systematic bias** in predictions. Normal fit (red curve) matches perfectly. This is ideal model behavior.
-
-![Error Distribution](assets/plot6_error.png)
-
+![Results](fm_publication_results.png)
 ---
 
 ## 10. Critical Analysis 🔍
